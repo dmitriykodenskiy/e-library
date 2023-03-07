@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import Stack from "./sdk/entry"
 
 function App() {
+  const getStack = async () => {
+    const header = await Stack.getEntry("header", "en-us")
+    console.log(header[0][0]);
+  }
+  getStack()
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
     </div>
   );
 }
