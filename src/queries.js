@@ -12,3 +12,33 @@ export const HEADER = gql`
     }
   }
 `
+export const ALL_BOOKS = gql`
+  query {
+    all_home {
+      items {
+        books_list {
+          ... on HomeBooksListBook {
+            __typename
+            book {
+              author
+              number_of_pages
+              short_description
+              title
+              imageConnection {
+                edges {
+                  node {
+                    url
+                  }
+                }
+              }
+              link {
+                href
+                title
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
