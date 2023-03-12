@@ -4,7 +4,9 @@ const Book = ({bookData: {author, number_of_pages: pages, short_description: des
     return (
         <li className="bookItem">
             <figure>
-                <img src={imageLink} alt={title}/>
+                <div className="bookImageWrapper">
+                    <img src={imageLink} alt={title}/>
+                </div>
                 <figcaption>{title}</figcaption>
                 <div className="bookDesc">
                     <div className="author">{author}</div>

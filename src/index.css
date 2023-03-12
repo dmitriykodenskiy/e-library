@@ -21,7 +21,7 @@ header{
   justify-content: center;
 }
 main{
-  max-width: 1340px;
+  max-width: 1420px;
   margin: auto;
 }
 .header__inner{
@@ -37,6 +37,8 @@ main{
 .booksList{
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 @media (min-width: 481px) {
   .bookItem{
@@ -48,11 +50,11 @@ main{
     width: 25%;
   }
 }
-.bookItem figure{
-  margin: 0;
-}
 .bookItem figure img{
   width: 100%;
+}
+.bookImageWrapper{
+  min-height: 450px;
 }
 .bookItem figure figcaption{
   font-weight: bold;
@@ -74,11 +76,11 @@ main{
   text-decoration: none;
   padding: 10px;
   margin: 10px 0;
-  background-color: #21f3f3;
-  color: #2b2f32;
+  background-color: #156161;
+  color: #dedddd;
   border-radius: 5px;
 }
 .getLink:hover{
-  background-color: #156161;
-  color: #dedddd;
+  background-color: #21f3f3;
+  color: #2b2f32;
 }
