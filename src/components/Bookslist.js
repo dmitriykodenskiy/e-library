@@ -8,7 +8,8 @@ const Bookslist = () => {
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error : {error.message}</p>;
 
-    const booksData = data.all_home.items[0]?.books_list
+    const booksData = data.all_book.items
+    console.log(data);
 
     if (!booksData) {
         return(
@@ -21,7 +22,7 @@ const Bookslist = () => {
             <h1>Books</h1>
             <section>
                 <ul className='booksList'>
-                    {booksData.map(book => <Book bookData={book.book} key={book.book.title}/>)}
+                    {booksData.map(book => <Book bookData={book} key={book.title}/>)}
                 </ul>
             </section>
         </main>

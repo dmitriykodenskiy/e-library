@@ -14,27 +14,21 @@ export const HEADER = gql`
 `
 export const ALL_BOOKS = gql`
   query {
-    all_home {
+    all_book {
       items {
-        books_list {
-          ... on HomeBooksListBook {
-            __typename
-            book {
-              author
-              number_of_pages
-              short_description
+        author
+        number_of_pages
+        short_description
+        title
+        link {
+          href
+          title
+        }
+        imageConnection {
+          edges {
+            node {
               title
-              imageConnection {
-                edges {
-                  node {
-                    url
-                  }
-                }
-              }
-              link {
-                href
-                title
-              }
+              url
             }
           }
         }
