@@ -84,3 +84,10 @@ main{
   background-color: #21f3f3;
   color: #2b2f32;
 }
+.react-read-more-read-less{
+  cursor: pointer;
+  font-style: italic;
+}
+.react-read-more-read-less:hover{
+  color: #156161;
+}

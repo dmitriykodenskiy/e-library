@@ -9,7 +9,12 @@ const Bookslist = () => {
     if (error) return <p>Error : {error.message}</p>;
 
     const booksData = data.all_home.items[0]?.books_list
-    console.log(booksData);
+
+    if (!booksData) {
+        return(
+            <div>No books available</div>
+        )
+    }
 
     return(
         <main>
