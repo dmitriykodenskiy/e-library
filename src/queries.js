@@ -13,8 +13,8 @@ export const HEADER = gql`
   }
 `
 export const ALL_BOOKS = gql`
-  query {
-    all_book {
+  query($skip: Int, $limit: Int) {
+    all_book(limit: $limit skip: $skip) {
       items {
         author
         number_of_pages

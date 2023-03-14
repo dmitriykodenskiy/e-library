@@ -47,7 +47,7 @@ main{
 }
 @media (min-width: 992px) {
   .bookItem{
-    width: 25%;
+    width: 33%;
   }
 }
 .bookItem figure img{
@@ -90,4 +90,16 @@ main{
 }
 .react-read-more-read-less:hover{
   color: #156161;
+}
+.load_more{
+  margin: 20px;
+  padding: 10px;
+  background-color: transparent;
+  border: 1px solid #156161;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.load_more:hover{
+  background-color: #156161;
+  color: #dedddd;
 }
