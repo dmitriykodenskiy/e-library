@@ -2,7 +2,7 @@ export const typePolicies = {
     Query: {
       fields: {
         all_book: {
-            //Don't cache separate results based on any of this field's arguments.
+            // Don't cache separate results based on any of this field's arguments.
             keyArgs: false
         },
       },
