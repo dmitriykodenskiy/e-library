@@ -1,7 +1,6 @@
 import { useQuery } from '@apollo/client'
 import { ALL_BOOKS } from '../queries'
 import Book from './Book'
-// import { useEffect } from 'react'
 
 const Bookslist = () => {
     const { loading, error, data, fetchMore } = useQuery(ALL_BOOKS, {
@@ -10,10 +9,6 @@ const Bookslist = () => {
             skip: 0
         }
     })
-
-    // useEffect(() => {
-    //     console.log(data);
-    // }, [data])
 
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error : {error.message}</p>;
@@ -29,12 +24,9 @@ const Bookslist = () => {
     const loadMore = () => {
         fetchMore({ 
             variables: { 
-                skip: 6 
+                skip: booksData.length 
             }
         })
-        // .then(response => {
-        //     booksData = response?.data?.all_book?.items;
-        // })
     }
     return(
         <main>
@@ -43,7 +35,7 @@ const Bookslist = () => {
                 <ul className='booksList'>
                     {booksData.map(book => <Book bookData={book} key={book.title}/>)}
                 </ul>
-                <button className='load_more' onClick={loadMore}>Load More</button>
+                {booksData.length < data?.all_book?.total && (<button className='load_more' onClick={loadMore}>Load More</button>)}
             </section>
         </main>
     )
