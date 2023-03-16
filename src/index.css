@@ -56,13 +56,16 @@ main{
 .bookImageWrapper{
   min-height: 320px;
 }
-.bookPageLink{
+.bookPageLink, .bookTitle{
   font-weight: bold;
   color: #000;
   text-decoration: none;
 }
 .bookPageLink:hover{
   color: #156161;
+}
+.bookPageTitle{
+  margin-bottom: 20px;
 }
 .bookDesc .author{
   font-style: italic;
@@ -84,6 +87,7 @@ main{
   background-color: #156161;
   color: #dedddd;
   border-radius: 5px;
+  text-align: center;
 }
 .getLink:hover{
   background-color: #21f3f3;
@@ -109,10 +113,24 @@ main{
   color: #dedddd;
 }
 .singleBookPage{
+  margin: 40px auto;
+  text-align: left;
+}
+.singleBookSection{
   display: flex;
-  margin: 30px auto;
+  margin-top: 40px;
   max-width: 1340px;
 }
 .singleBookImg{
   margin-right: 10px;
+}
+.backHome{
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 10px 20px;
+  background-color: #c5bdbd;
+  font: bold 20px/20px sans-serif;
 }

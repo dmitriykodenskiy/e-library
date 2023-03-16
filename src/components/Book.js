@@ -13,7 +13,7 @@ const Book = ({bookData: {author, number_of_pages: pages, short_description: des
                             <img src={imageLink} alt={title}/>
                         </div>
                     }
-                    <figcaption>{title}</figcaption>
+                    <figcaption className="bookTitle">{title}</figcaption>
                 </Link>
                 <div className="bookDesc">
                     <div className="author">{author}</div>

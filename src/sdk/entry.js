@@ -81,6 +81,27 @@ const stackObject = {
       )
     })
   },
+  getBook(ctUid, locale, title) {
+    return new Promise((resolve, reject) => {
+      Stack.ContentType(ctUid)
+        .Query()
+        .where("title", title)
+        .language(locale)
+        .includeOwner()
+        .only(['title', 'number_of_pages', 'short_description', 'link', 'image'])
+        .toJSON()
+        .find()
+        .then(
+          (result) => {
+            console.log(result);
+            resolve(result)
+          },
+          (error) => {
+            reject(error)
+          }
+        )
+    })
+  }
 }
 
 export default stackObject
