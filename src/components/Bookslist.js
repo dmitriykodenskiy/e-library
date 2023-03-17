@@ -6,6 +6,11 @@ const Bookslist = ({ loadMore, data }) => {
         <main>
             <h1>Books</h1>
             <section>
+                <div className='paginationToggle'>
+                    <span className='paginationLabel'>Pagination:</span>
+                    <button className='pagination__btn pagination__btn_loadMore active'>Load more</button>
+                    <button className='pagination__btn pagination__btn_perPage'>Per-page</button>
+                </div>
                 <ul className='booksList'>
                     {booksData.map(book => <Book bookData={book} key={book.title}/>)}
                 </ul>

@@ -134,3 +134,29 @@ main{
   background-color: #c5bdbd;
   font: bold 20px/20px sans-serif;
 }
+.paginationToggle{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 20px auto;
+  max-width: 1340px;
+}
+.pagination__btn{
+  margin: 0 10px;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.pagination__btn.active{
+  border: 1px solid #156161;
+  background-color: transparent;
+}
+.pagination__btn:not(.active){
+  border: none;
+  cursor: pointer;
+  background-color: #156161;
+  color: #fff;
+}
+.pagination__btn:not(.active):hover{
+  background-color: #21f3f3;
+  color: #2b2f32;
+}
