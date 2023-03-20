@@ -4,9 +4,12 @@ import Bookslist from './components/Bookslist';
 import BookPage from './components/BookPage';
 import { Routes, Route } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
+import { useDispatch } from 'react-redux'
+import { initializeData } from './reducers/dataReducer';
 import { ALL_BOOKS } from './queries'
 
 const App = () => {
+  const dispatch = useDispatch()
   // Fetch books with graphQL
   const { loading, error, data, fetchMore } = useQuery(ALL_BOOKS, {
       variables: {
@@ -18,6 +21,7 @@ const App = () => {
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error : {error.message}</p>;
 
+  dispatch(initializeData(data))
   let booksData = data?.all_book?.items
 
   if (!booksData) {
@@ -40,7 +44,7 @@ const App = () => {
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<Bookslist loadMore={loadMore} data={data}/>}></Route>
+        <Route path="/" element={<Bookslist loadMore={loadMore}/>}></Route>
         <Route path="/books/:title" element={<BookPage/>}></Route>
       </Routes>
     </div>

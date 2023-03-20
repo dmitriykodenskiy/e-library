@@ -2,12 +2,12 @@ import Book from './Book'
 import { useDispatch, useSelector } from 'react-redux'
 import { changePaginationType } from '../reducers/paginationReducer'
 
-const Bookslist = ({ loadMore, data }) => {
-    let booksData = data?.all_book?.items
+const Bookslist = ({ loadMore }) => {
 
-    console.log(booksData);
     const dispatch = useDispatch()
     const paginationType = useSelector(state => state.pagination)
+    const data = useSelector(state => state.data)
+    let booksData = data?.all_book?.items
 
     const togglePagination = async (event, type) => {
         const paginationOptions = document.querySelectorAll('.pagination__btn')
