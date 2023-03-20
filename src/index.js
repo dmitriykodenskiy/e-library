@@ -6,15 +6,19 @@ import reportWebVitals from './reportWebVitals';
 import { ApolloProvider } from '@apollo/client'
 import client from './apollo/client'
 import {BrowserRouter as Router} from 'react-router-dom'
+import { Provider } from 'react-redux'
+import store from './store'
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ApolloProvider client={client}>
-    <Router>
-      <App />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
   </ApolloProvider>
   
 );
