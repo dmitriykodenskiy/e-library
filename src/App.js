@@ -30,11 +30,9 @@ const App = () => {
       )
   }
   
-  const loadMore = () => {
+  const loadMore = (variables) => {
       fetchMore({ 
-          variables: { 
-              skip: booksData.length 
-          }
+          variables: variables
       })
   }
   

@@ -23,6 +23,7 @@ header{
 main{
   max-width: 1420px;
   margin: auto;
+  padding: 20px 0;
 }
 .header__inner{
   width: 100%;

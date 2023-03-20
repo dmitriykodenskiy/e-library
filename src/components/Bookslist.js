@@ -1,12 +1,13 @@
 import Book from './Book'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { changePaginationType } from '../reducers/paginationReducer'
+import Pagination from './Pagination'
+import store from '../store'
 
 const Bookslist = ({ loadMore }) => {
 
     const dispatch = useDispatch()
-    const paginationType = useSelector(state => state.pagination)
-    const data = useSelector(state => state.data)
+    const data = store.getState().data
     let booksData = data?.all_book?.items
 
     const togglePagination = async (event, type) => {
@@ -18,15 +19,6 @@ const Bookslist = ({ loadMore }) => {
         dispatch(changePaginationType(type))
     }
 
-    const paginationBlock = () => {
-        if (booksData.length >= data?.all_book?.total) return null
-
-        if (paginationType === 'load_more') {
-            return (<button className='load_more' onClick={loadMore}>Load More</button>)
-        } else if(paginationType === 'per_page') {
-            return (<div>per page</div>)
-        }
-    }
     return(
         <main>
             <h1>Books</h1>
@@ -39,7 +31,7 @@ const Bookslist = ({ loadMore }) => {
                 <ul className='booksList'>
                     {booksData.map(book => <Book bookData={book} key={book.title}/>)}
                 </ul>
-                {paginationBlock()}
+                <Pagination loadMore={loadMore} />
             </section>
         </main>
     )
