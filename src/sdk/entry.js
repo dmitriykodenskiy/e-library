@@ -93,7 +93,6 @@ const stackObject = {
         .find()
         .then(
           (result) => {
-            console.log(result);
             resolve(result)
           },
           (error) => {

@@ -7,7 +7,7 @@ const Book = ({bookData: {author, number_of_pages: pages, short_description: des
     return (
         <li className="bookItem">
             <figure>
-                <Link className="bookPageLink" to={`/books/${bookParam}`}>
+                <Link className="bookPageLink" to={`/e-library/books/${bookParam}`}>
                     {imageLink &&
                         <div className="bookImageWrapper">
                             <img src={imageLink} alt={title}/>

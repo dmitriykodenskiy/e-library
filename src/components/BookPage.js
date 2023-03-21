@@ -9,7 +9,7 @@ const BookPage = () => {
     
     const [deliveredBooks, setDeliveredBooks] = useState([])
     
-    const match = useMatch("/books/:title")
+    const match = useMatch("/e-library/books/:title")
     const matchedTitle = match.params?.title
 
     // Get Book data with delivery API
@@ -29,7 +29,7 @@ const BookPage = () => {
 
     return(
         <main className="singleBookPage">
-            <button className="backHome" onClick={() => navigate('/')}>Home</button>
+            <button className="backHome" onClick={() => navigate('/e-library')}>Home</button>
             <section className="singleBookSection">
                 <img className="singleBookImg" src={`${url}?width=${imageWidth}`} alt={title}/>
                 <div className="bookDesc">

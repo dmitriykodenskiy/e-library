@@ -42,8 +42,8 @@ const App = () => {
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<Bookslist loadMore={loadMore}/>}></Route>
-        <Route path="/books/:title" element={<BookPage/>}></Route>
+        <Route path="/e-library" element={<Bookslist loadMore={loadMore}/>}></Route>
+        <Route path="/e-library/books/:title" element={<BookPage/>}></Route>
       </Routes>
     </div>
   );
