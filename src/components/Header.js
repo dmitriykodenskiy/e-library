@@ -1,5 +1,6 @@
 import { useQuery } from '@apollo/client'
 import { HEADER } from '../queries'
+import { Link } from 'react-router-dom'
 
 
 const Header = () => {
@@ -12,7 +13,8 @@ const Header = () => {
     return(
         <header>
             <div className='header__inner'>
-                <span className='logo'>{headerData.title}</span>
+                <Link className="logo" to={`/e-library/`}>{headerData.title}</Link>
+                <Link className="postsLink" to={`/e-library/posts`}>Posts</Link>
             </div>
         </header>
     )
