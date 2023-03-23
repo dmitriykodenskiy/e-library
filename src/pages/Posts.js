@@ -1,5 +1,5 @@
 import store from "../store"
-import Post from "./Post";
+import Post from "../components/Post";
 
 const Posts = () => {
     const posts = store.getState().posts

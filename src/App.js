@@ -1,8 +1,8 @@
 import './App.css';
 import Header from './components/Header';
-import Bookslist from './components/Bookslist';
-import BookPage from './components/BookPage';
-import Posts from './components/Posts'
+import Bookslist from './pages/Bookslist';
+import BookPage from './pages/BookPage';
+import Posts from './pages/Posts'
 import { useEffect } from 'react';
 import { initializePosts } from './reducers/postsReducer';
 import { Routes, Route } from 'react-router-dom'

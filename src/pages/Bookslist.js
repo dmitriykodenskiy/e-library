@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux'
 import { changePaginationType } from '../reducers/paginationReducer'
-import Pagination from './Pagination'
+import Pagination from '../components/Pagination'
 
 const Bookslist = ({ loadMore }) => {
 
