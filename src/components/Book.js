@@ -7,28 +7,30 @@ const Book = ({bookData: {author, number_of_pages: pages, short_description: des
     return (
         <li className="bookItem">
             <figure>
-                <Link className="bookPageLink" to={`/e-library/books/${bookParam}`}>
-                    {imageLink &&
-                        <div className="bookImageWrapper">
-                            <img src={imageLink} alt={title}/>
-                        </div>
-                    }
-                    <figcaption className="bookTitle">{title}</figcaption>
-                </Link>
-                <div className="bookDesc">
-                    <div className="author">{author}</div>
-                    <div className="shorDesc">
-                        <ReactReadMoreReadLess
-                            charLimit={200}
-                            readMoreText={"Read more"}
-                            readLessText={"Read less"}
-                        >
-                            {desc}
-                        </ReactReadMoreReadLess>
+                <div className="bookInfo">
+                    <Link className="bookPageLink" to={`/e-library/books/${bookParam}`}>
+                        {imageLink &&
+                            <div className="bookImageWrapper">
+                                <img src={imageLink} alt={title}/>
+                            </div>
+                        }
+                        <figcaption className="bookTitle">{title}</figcaption>
+                    </Link>
+                    <div className="bookDesc">
+                            <div className="author">{author}</div>
+                            <div className="shorDesc">
+                                <ReactReadMoreReadLess
+                                    charLimit={200}
+                                    readMoreText={"Read more"}
+                                    readLessText={"Read less"}
+                                >
+                                    {desc}
+                                </ReactReadMoreReadLess>
+                            </div>
+                            <div className="pageCount">Pages: {pages}</div>
                     </div>
-                    <div className="pageCount">Pages: {pages}</div>
-                    <a className="getLink" href={link.href}>{link.title}</a>
                 </div>
+                <a className="getLink" href={link.href}>{link.title}</a>
             </figure>
         </li>
     )
