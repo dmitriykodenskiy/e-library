@@ -1,26 +1,10 @@
 import { useNavigate } from "react-router-dom"
-import getBook from '../delivery API/client';
-import { useMatch } from 'react-router-dom'
-import { useState, useEffect } from 'react';
+import useDeliveredBooks from '../hooks/useDeliveredBooks'
 
 const BookPage = () => {
     const imageWidth = 400
     const navigate = useNavigate()
-    
-    const [deliveredBooks, setDeliveredBooks] = useState([])
-    
-    const match = useMatch("/e-library/books/:title")
-    const matchedTitle = match.params?.title
-
-    // Get Book data with delivery API
-    const fetchBooksWithDeliveryApi = async () => {
-        const deliveryBooksData = await getBook(matchedTitle)
-        setDeliveredBooks(deliveryBooksData)
-    }
-    useEffect(() => {
-        fetchBooksWithDeliveryApi()
-    }, [])
-
+    const deliveredBooks = useDeliveredBooks()
 
     if (deliveredBooks.length === 0) {
         return (<p>No book found</p>)
