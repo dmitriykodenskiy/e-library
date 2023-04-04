@@ -1,8 +1,9 @@
 import ReactReadMoreReadLess from "react-read-more-read-less"
 import { Link } from 'react-router-dom'
 
-const Book = ({bookData: {author, number_of_pages: pages, short_description: desc, title, link, imageConnection}}) => {
+const Book = ({bookData: {number_of_pages: pages, short_description: desc, title, link, imageConnection, authorrefConnection}}) => {
     const imageLink = imageConnection.edges[0]?.node?.url
+    const authors = authorrefConnection.edges.map(item => item.node)
     const bookParam = encodeURIComponent(title)
     return (
         <li className="bookItem">
@@ -17,7 +18,7 @@ const Book = ({bookData: {author, number_of_pages: pages, short_description: des
                         <figcaption className="bookTitle">{title}</figcaption>
                     </Link>
                     <div className="bookDesc">
-                            <div className="author">{author}</div>
+                            {authors.map(author => <a className="author" href={author.url} key={author.title}>{author.title}<br/></a>)}
                             <div className="shorDesc">
                                 <ReactReadMoreReadLess
                                     charLimit={200}

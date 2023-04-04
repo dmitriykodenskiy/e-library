@@ -17,7 +17,6 @@ export const ALL_BOOKS = gql`
     all_book(limit: $limit skip: $skip) {
       total
       items {
-        author
         number_of_pages
         short_description
         title
@@ -33,6 +32,17 @@ export const ALL_BOOKS = gql`
             }
           }
         }
+        authorrefConnection {
+          edges {
+            node {
+              ... on Author {
+                title
+                url
+              }
+            }
+          }
+        }
+
       }
     }
   }

@@ -5,6 +5,7 @@
   "homepage": "https://dmitriykodenskiy.github.io/e-library/",
   "dependencies": {
     "@apollo/client": "^3.7.4",
+    "@contentstack/json-rte-serializer": "^2.0.2",
     "@reduxjs/toolkit": "^1.9.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
