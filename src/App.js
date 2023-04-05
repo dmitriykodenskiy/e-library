@@ -8,7 +8,7 @@ import { initializePosts } from './reducers/postsReducer';
 import { Routes, Route } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
 import { useDispatch } from 'react-redux'
-import { initializeData } from './reducers/dataReducer';
+import { initializeBooksData } from './reducers/booksDataReducer';
 import { ALL_BOOKS } from './queries'
 
 const App = () => {
@@ -27,7 +27,7 @@ const App = () => {
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error : {error.message}</p>;
 
-  dispatch(initializeData(data))
+  dispatch(initializeBooksData(data))
   let booksData = data?.all_book?.items
 
   if (!booksData) {
