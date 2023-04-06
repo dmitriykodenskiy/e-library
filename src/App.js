@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/Header';
 import Bookslist from './pages/Bookslist';
 import BookPage from './pages/BookPage';
+import AuthorPage from './pages/AuthorPage';
 import Posts from './pages/Posts'
 import { useEffect } from 'react';
 import { initializePosts } from './reducers/postsReducer';
@@ -50,6 +51,7 @@ const App = () => {
       <Routes>
         <Route path="/e-library" element={<Bookslist loadMore={loadMore}/>}></Route>
         <Route path="/e-library/books/:title" element={<BookPage/>}></Route>
+        <Route path="/e-library/authors/:name" element={<AuthorPage/>}></Route>
         <Route path="/e-library/posts" element={<Posts/>}></Route>
       </Routes>
     </div>

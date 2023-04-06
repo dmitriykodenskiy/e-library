@@ -20,6 +20,7 @@ export const ALL_BOOKS = gql`
         number_of_pages
         short_description
         title
+        rating
         link {
           href
           title
@@ -43,6 +44,93 @@ export const ALL_BOOKS = gql`
           }
         }
 
+      }
+    }
+  }
+`
+
+export const ALL_AUTHORS = gql`
+  query AllBooks($url: String) {
+    all_author(where: {url: $url}) {
+      items {
+        title
+        imageConnection {
+          edges {
+            node {
+              url
+            }
+          }
+        }
+        description {
+          json
+        }
+        additional_sections {
+          ... on AuthorAdditionalSectionsPopularBooks {
+            __typename
+            popular_books {
+              books {
+                bookConnection {
+                  edges {
+                    node {
+                      ... on Book {
+                        title
+                        url
+                        number_of_pages
+                        rating
+                        short_description
+                        imageConnection {
+                          edges {
+                            node {
+                              url
+                            }
+                          }
+                        }
+                        authorrefConnection {
+                          edges {
+                            node {
+                              ... on Author {
+                                title
+                                url
+                              }
+                            }
+                          }
+                        }
+                        link {
+                          href
+                          title
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          ... on AuthorAdditionalSectionsOtherAuthors {
+            __typename
+            other_authors {
+              authors_list {
+                author_itemConnection {
+                  edges {
+                    node {
+                      ... on Author {
+                        title
+                        url
+                        imageConnection {
+                          edges {
+                            node {
+                              url
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

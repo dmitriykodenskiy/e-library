@@ -41,7 +41,7 @@ main{
 .logo:hover{
   color: #21f3f3;
 }
-.booksList{
+.booksList, .popularBooksList{
   list-style: none;
   padding: 0;
   display: flex;
@@ -74,6 +74,7 @@ main{
   -webkit-box-orient: vertical;
   display: -webkit-box;
   overflow: hidden;
+  text-align: center;
 }
 .bookPageLink:hover{
   color: #156161;
@@ -86,6 +87,7 @@ main{
   text-decoration: none;
   color: #000;
   display: block;
+  text-align: center;
 }
 .bookDesc .author:hover{
   color: #21f3f3;
@@ -95,7 +97,7 @@ main{
   text-align: left;
 }
 .bookInfo{
-  min-height: 630px;
+  min-height: 650px;
 }
 .pageCount{
   text-align: left;
@@ -135,16 +137,17 @@ main{
   background-color: #156161;
   color: #dedddd;
 }
-.singleBookPage{
+.singleBookPage, .authorPage{
   margin: 40px auto;
+  max-width: 1340px;
   text-align: left;
 }
-.singleBookSection{
+.singleBookSection, .authorSection{
   display: flex;
-  margin-top: 40px;
+  margin: 40px auto;
   max-width: 1340px;
 }
-.singleBookImg{
+.singleBookImg, .authorImage{
   margin-right: 10px;
 }
 .backHome{
@@ -212,4 +215,38 @@ main{
 }
 .postDesc{
   text-align: left;
+}
+.authorPage__name{
+  font: bold 24px/20px sans-serif;
+  color: #156161;
+}
+.additionalSection{
+  margin: 50px 0;
+}
+.additionalSection h2{
+  text-align: center;
+}
+.otherAuthorsList{
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.authorImageWrapper{
+  min-height: 320px;
+}
+.authorImageWrapper img{
+  max-width: 100%;
+}
+.authorItem{
+  width: 20%;
+}
+.rating{
+  background-image: url('https://images.contentstack.io/v3/assets/blt774c40ef55b77751/bltc810a86427d53c48/642ec5102cf9c710750b5590/stars.jpg');
+  width: 140px;
+  height: 27px;
+  background-repeat: no-repeat;
+  background-size: 300px;
+  background-position-x: -7px;
+  margin: 10px 0;
 }

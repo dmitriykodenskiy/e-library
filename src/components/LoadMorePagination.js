@@ -1,11 +1,9 @@
 import Book from './Book'
 import store from '../store'
-import { jsonToHtml } from "@contentstack/json-rte-serializer";
 
 const LoadMorePagination = ({loadMore}) => {
     const data = store.getState().booksData
     const booksData = data?.all_book?.items
-
     const variables = { 
         skip: booksData.length 
     }
