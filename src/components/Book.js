@@ -40,7 +40,7 @@ const Book = ({bookData: {number_of_pages: pages, rating, short_description: des
                         <figcaption className="bookTitle">{title}</figcaption>
                     </Link>
                     <div className="bookDesc">
-                            {authors.map(author => <a className="author" href={author.url} key={author.title}>{author.title}<br/></a>)}
+                            {authors.map(author => <Link className="author" to={author.url} key={author.title}>{author.title}<br/></Link>)}
                             <div className="shorDesc">
                                 <ReactReadMoreReadLess
                                     charLimit={200}
